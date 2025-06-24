@@ -1,15 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:newsapp/models/news_model.dart';
 
 class NewsCard extends StatelessWidget {
-  const NewsCard({
-    super.key,
-    required this.image,
-    required this.title,
-    required this.newtext,
-  });
-  final String image;
-  final String title;
-  final String newtext;
+  const NewsCard({super.key, required this.newsModel});
+  final NewsModel newsModel;
 
   @override
   Widget build(BuildContext context) {
@@ -19,17 +13,17 @@ class NewsCard extends StatelessWidget {
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(25),
-            child: Image.asset(image, fit: BoxFit.fill),
+            child: Image.asset(newsModel.image, fit: BoxFit.fill),
           ),
           SizedBox(height: 12),
           Text(
-            title,
+            newsModel.title,
             style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
           ),
           Text(
-            newtext,
+            newsModel.newtext,
             style: TextStyle(fontSize: 20, color: Colors.blueGrey),
             maxLines: 2,
             overflow: TextOverflow.ellipsis,

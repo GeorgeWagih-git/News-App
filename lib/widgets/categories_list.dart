@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:newsapp/models/category_model.dart';
 import 'package:newsapp/widgets/category_card.dart';
 
 class CategoriesList extends StatelessWidget {
@@ -9,18 +10,47 @@ class CategoriesList extends StatelessWidget {
     return ListView(
       scrollDirection: Axis.horizontal,
       children: [
-        CategoryCard(cardname: 'Business', cardimage: 'assets/business2.png'),
         CategoryCard(
-          cardname: 'Entertaiment',
-          cardimage: 'assets/technology.jpeg',
+          model: CategoryModel(
+            cardname: 'Business',
+            cardimage: 'assets/business2.png',
+          ),
         ),
-        CategoryCard(cardname: 'General', cardimage: 'assets/general2.png'),
-        CategoryCard(cardname: 'Health', cardimage: 'assets/technology.jpeg'),
-        CategoryCard(cardname: 'Science', cardimage: 'assets/technology.jpeg'),
-        CategoryCard(cardname: 'Sports', cardimage: 'assets/sports2.png'),
         CategoryCard(
-          cardname: 'Technology',
-          cardimage: 'assets/technology.jpeg',
+          model: CategoryModel(
+            cardname: 'Entertaiment',
+            cardimage: 'assets/technology.jpeg',
+          ),
+        ),
+        CategoryCard(
+          model: CategoryModel(
+            cardimage: 'assets/general2.png',
+            cardname: 'General',
+          ),
+        ),
+        CategoryCard(
+          model: CategoryModel(
+            cardname: 'Health',
+            cardimage: 'assets/technology.jpeg',
+          ),
+        ),
+        CategoryCard(
+          model: CategoryModel(
+            cardname: 'Science',
+            cardimage: 'assets/technology.jpeg',
+          ),
+        ),
+        CategoryCard(
+          model: CategoryModel(
+            cardname: 'Sports',
+            cardimage: 'assets/sports2.png',
+          ),
+        ),
+        CategoryCard(
+          model: CategoryModel(
+            cardname: 'Technology',
+            cardimage: 'assets/technology.jpeg',
+          ),
         ),
       ],
     );
