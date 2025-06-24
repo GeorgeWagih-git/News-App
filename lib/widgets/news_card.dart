@@ -7,29 +7,27 @@ class NewsCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(20),
-      child: Column(
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(25),
-            child: Image.asset(newsModel.image, fit: BoxFit.fill),
-          ),
-          SizedBox(height: 12),
-          Text(
-            newsModel.title,
-            style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-            maxLines: 2,
-            overflow: TextOverflow.ellipsis,
-          ),
-          Text(
-            newsModel.newtext,
-            style: TextStyle(fontSize: 20, color: Colors.blueGrey),
-            maxLines: 2,
-            overflow: TextOverflow.ellipsis,
-          ),
-        ],
-      ),
+    return Column(
+      children: [
+        ClipRRect(
+          borderRadius: BorderRadius.circular(25),
+          child: Image.asset(newsModel.image, fit: BoxFit.fill),
+        ),
+        SizedBox(height: 12),
+        Text(
+          newsModel.title,
+          style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+          maxLines: 2,
+          overflow: TextOverflow.ellipsis,
+        ),
+        Text(
+          newsModel.newtext,
+          style: TextStyle(fontSize: 20, color: Colors.blueGrey),
+          maxLines: 2,
+          overflow: TextOverflow.ellipsis,
+        ),
+        SizedBox(height: 32),
+      ],
     );
   }
 }
