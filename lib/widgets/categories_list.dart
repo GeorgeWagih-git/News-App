@@ -8,12 +8,13 @@ class CategoriesList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<CategoryModel> categories = [
+      CategoryModel(cardimage: 'assets/general2.png', cardname: 'General'),
       CategoryModel(cardname: 'Business', cardimage: 'assets/business2.png'),
       CategoryModel(
         cardname: 'Entertaiment',
         cardimage: 'assets/technology.jpeg',
       ),
-      CategoryModel(cardimage: 'assets/general2.png', cardname: 'General'),
+
       CategoryModel(cardname: 'Health', cardimage: 'assets/technology.jpeg'),
       CategoryModel(cardname: 'Science', cardimage: 'assets/technology.jpeg'),
       CategoryModel(cardname: 'Sports', cardimage: 'assets/sports2.png'),
