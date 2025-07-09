@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:newsapp/screens/home_screen.dart';
 
-void main() {
+void main() async {
   runApp(NewsApp());
 }
 
