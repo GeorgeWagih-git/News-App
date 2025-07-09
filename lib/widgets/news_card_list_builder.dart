@@ -2,16 +2,16 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:newsapp/models/article_model.dart';
 import 'package:newsapp/services/news_service.dart';
-import 'package:newsapp/widgets/news_card.dart';
+import 'package:newsapp/widgets/news_list.dart';
 
-class NewsCardList extends StatefulWidget {
-  const NewsCardList({super.key});
+class NewsCardListBuilder extends StatefulWidget {
+  const NewsCardListBuilder({super.key});
 
   @override
-  State<NewsCardList> createState() => _NewsCardListState();
+  State<NewsCardListBuilder> createState() => _NewsCardListBuilderState();
 }
 
-class _NewsCardListState extends State<NewsCardList> {
+class _NewsCardListBuilderState extends State<NewsCardListBuilder> {
   List<ArticleModel> articles = [];
   bool isloading = true;
   @override
@@ -30,13 +30,6 @@ class _NewsCardListState extends State<NewsCardList> {
   Widget build(BuildContext context) {
     return isloading
         ? SliverToBoxAdapter(child: Center(child: CircularProgressIndicator()))
-        : SliverList(
-          delegate: SliverChildBuilderDelegate(childCount: articles.length, (
-            context,
-            index,
-          ) {
-            return NewsCard(articleModel: articles[index]);
-          }),
-        );
+        : NewsList(articles: articles);
   }
 }
